@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Brands = () => {
     const lodedData = useLoaderData()
@@ -12,13 +12,16 @@ const Brands = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto my-12">
                 {
                     brands.map(logo =>
-                        <div
-                            key={logo._id}
-                            className="shadow-md rounded-lg justify-self-center p-3 cursor-pointer"
-                        >
-                            <img className="h-52 w-56" src={logo.brand_img} alt="" />
-                            <h3 className="text-3xl font-extrabold text-center mt-4 hover:text-rose-600">{logo.brand_name}</h3>
-                        </div>)
+                        <Link key={logo._id} className=" justify-self-center" to={`/cars/${logo.brand_name}`}>
+                            <div
+                                className="shadow-md rounded-lg p-3 cursor-pointer"
+                            >
+                                <img className="h-52 w-56" src={logo.brand_img} alt="" />
+                                <h3 className="text-3xl font-extrabold text-center mt-4">{logo.brand_name}</h3>
+                                {/* <button className="w-full btn text-white font-bold capitalize bg-rose-600 mt-2 hover:bg-rose-700">See Details</button> */}
+                            </div>
+                        </Link>
+                    )
                 }
             </div>
         </div>
