@@ -7,7 +7,7 @@ const Navbar = () => {
         <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-white bg-rose-700  shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-black border"
+                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-white bg-rose-700  shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-white border"
             }
         >
             Home
@@ -15,7 +15,7 @@ const Navbar = () => {
         <NavLink
             to="/addProduct"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-white bg-rose-700  shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-black border"
+                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-white bg-rose-700  shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-white border"
             }
         >
             Add Product
@@ -23,7 +23,7 @@ const Navbar = () => {
         <NavLink
             to="/addCart"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-black border"
+                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-white border"
             }
         >
             Add Cart
@@ -31,7 +31,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-black">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -41,7 +41,7 @@ const Navbar = () => {
                         {navLink}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <img className="h-20 w-48" src='https://i.ibb.co/W3QTrzm/download.png' alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-4">
