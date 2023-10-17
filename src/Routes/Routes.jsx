@@ -3,7 +3,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import MainLayout from "../MainLayout/MainLayout";
 import Home from "../Pages/Home/Home";
 import AddProducts from "../Pages/AddProducts/AddProducts";
-import BrandsDetails from "../Components/BrandsName/BrandsDetails";
+import Cars from "../Components/BrandsName/Cars";
 
     const router = createBrowserRouter([
         {
@@ -18,7 +18,7 @@ import BrandsDetails from "../Components/BrandsName/BrandsDetails";
                 },
                 {
                     path: '/cars/:brand_name',
-                    element: <BrandsDetails></BrandsDetails>,
+                    element: <Cars></Cars>,
                 },
                 {
                     path: '/addProduct',

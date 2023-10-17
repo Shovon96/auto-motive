@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const BrandsDetails = () => {
+const Cars = () => {
 
     const [cars, setCars] = useState([])
     const { brand_name } = useParams()
@@ -44,4 +44,4 @@ const BrandsDetails = () => {
     );
 };
 
-export default BrandsDetails;
+export default Cars;

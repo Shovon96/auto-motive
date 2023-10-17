@@ -7,7 +7,7 @@ const Navbar = () => {
         <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-black md:text-white bg-rose-700  shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-black md:text-white border-y"
+                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-black lg:text-white bg-rose-700  shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-black lg:text-white border-y"
             }
         >
             Home
@@ -15,7 +15,7 @@ const Navbar = () => {
         <NavLink
             to="/addProduct"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-black md:text-white bg-rose-700  shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-black md:text-white border-y"
+                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-black lg:text-white bg-rose-700  shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-black lg:text-white border-y"
             }
         >
             Add Product
@@ -23,7 +23,7 @@ const Navbar = () => {
         <NavLink
             to="/addCart"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-black md:text-white bg-rose-700 shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-black md:text-white border-y"
+                isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-black lg:text-white bg-rose-700 shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-black lg:text-white border-y"
             }
         >
             Add Cart
