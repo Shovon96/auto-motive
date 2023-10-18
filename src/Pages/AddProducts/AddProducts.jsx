@@ -42,13 +42,13 @@ const AddProducts = () => {
     return (
         <div>
             <div>
-                <h2 className="text-4xl font-bold text-center">Add new Cars</h2>
-                <p className="text-center my-3 px-72">Welcome to AutoMotive, where automotive innovation takes the driver seat. Immerse yourself in the latest models that redefine the road, from the sleek and powerful [Featured Car 1] to the versatile. Each vehicle in our collection is a harmonious blend of design, performance, and cutting-edge technology, promising an unparalleled driving experience. At AutoMotive, we invite you to explore the future of driving with our newest additions, where every journey is an adventure in style and sophistication.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-center mt-4">Add new Cars</h2>
+                <p className="text-center my-3 px-3 md:px-12 lg:px-72">Welcome to AutoMotive, where automotive innovation takes the driver seat. Immerse yourself in the latest models that redefine the road, from the sleek and powerful to the versatile. Each vehicle in our collection is a harmonious blend of design, performance, and cutting-edge technology, promising an unparalleled driving experience. At AutoMotive, we invite you to explore the future of driving with our newest additions, where every journey is an adventure in style and sophistication.</p>
             </div>
-            <form onSubmit={handleAddCars} className="border w-2/3 mx-auto my-12 p-5 bg-rose-100 rounded-md">
+            <form onSubmit={handleAddCars} className="border md:w-2/3 mx-auto my-12 p-5 bg-rose-100 rounded-md">
                 <div className="form-control">
 
-                    <div className="flex justify-between gap-6">
+                    <div className="lg:flex justify-between gap-6">
                         <div className="w-full">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Name:</span>

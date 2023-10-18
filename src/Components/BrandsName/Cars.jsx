@@ -22,11 +22,11 @@ const Cars = () => {
                         <div key={car._id} className="justify-self-center p-4">
                             <img className="h-72" src={car.ImageURL} alt="" />
                             <div className="shadow-md px-5">
-                                <div className="flex justify-between my-2 text-lg">
+                                <div className="md:flex justify-between my-2 text-lg">
                                     <h2><span className="font-bold">Name: </span>{car.Name}</h2>
                                     <h3><span className="font-bold">Brand Name: </span>{car.brand_name}</h3>
                                 </div>
-                                <div className="flex justify-between my-2 text-lg flex-wrap">
+                                <div className="md:flex justify-between my-2 text-lg flex-wrap">
                                     <h4><span className="font-bold">Type: </span>{car.type}</h4>
                                     <p><span className="font-bold">Price: </span>$ {car.price}</p>
                                 </div>
