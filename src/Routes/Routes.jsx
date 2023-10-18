@@ -22,8 +22,9 @@ import UpdateCars from "../Components/UpdateCars/UpdateCars";
                     element: <Cars></Cars>,
                 },
                 {
-                    path: '/updateCars',
-                    element: <UpdateCars></UpdateCars>
+                    path: '/updateCars/:id',
+                    element: <UpdateCars></UpdateCars>,
+                    loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
                 },
                 {
                     path: '/addProduct',

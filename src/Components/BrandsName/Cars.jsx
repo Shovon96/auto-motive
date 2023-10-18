@@ -33,7 +33,7 @@ const Cars = () => {
                                 <p>Ratting: {car.rating}</p>
                                 <p className="font-medium text-gray-500 py-3 h-24">{car.short_description}</p>
                                 <div className="flex justify-evenly">
-                                    <Link to='/updateCars'>
+                                    <Link to={`/updateCars/${car._id}`}>
                                         <button className="btn px-12 my-3 py-3 bg-rose-500 text-base font-bold text-white rounded-full hover:bg-rose-700">Update</button>
                                     </Link>
                                     <button className="btn px-12 my-3 py-3 bg-rose-500 text-base font-bold text-white rounded-full hover:bg-rose-700">Details</button>
