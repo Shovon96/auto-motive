@@ -4,6 +4,7 @@ import MainLayout from "../MainLayout/MainLayout";
 import Home from "../Pages/Home/Home";
 import AddProducts from "../Pages/AddProducts/AddProducts";
 import Cars from "../Components/BrandsName/Cars";
+import UpdateCars from "../Components/UpdateCars/UpdateCars";
 
     const router = createBrowserRouter([
         {
@@ -19,6 +20,10 @@ import Cars from "../Components/BrandsName/Cars";
                 {
                     path: '/cars/:brand_name',
                     element: <Cars></Cars>,
+                },
+                {
+                    path: '/updateCars',
+                    element: <UpdateCars></UpdateCars>
                 },
                 {
                     path: '/addProduct',
