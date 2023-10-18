@@ -14,8 +14,8 @@ const Cars = () => {
     }, [brand_name])
 
     return (
-        <div className="my-24">
-            {/* <h1 className="text-5xl font-extrabold text-center my-4 text-rose-600">{car.brand_name}</h1> */}
+        <div className="mb-24 mt-8">
+            <h1 className="text-5xl font-extrabold text-center my-4 text-rose-600">{brand_name}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8">
                 {
                     cars.map(car =>
@@ -31,16 +31,15 @@ const Cars = () => {
                                     <p><span className="font-bold">Price: </span>$ {car.price}</p>
                                 </div>
                                 <p>Ratting: {car.rating}</p>
-                                <p className="font-medium text-gray-500 py-3 h-24">{car.short_description}</p>
+                                {/* <p className="font-medium text-gray-500 py-3 h-24">{car.short_description}</p> */}
                                 <div className="flex justify-evenly">
                                     <Link to={`/updateCars/${car._id}`}>
-                                        <button className="btn px-12 my-3 py-3 bg-rose-500 text-base font-bold text-white rounded-full hover:bg-rose-700">Update</button>
+                                        <button className="btn px-8 my-3 py-2 bg-rose-700 text-sm font-bold text-white rounded-lg hover:bg-rose-600">Update</button>
                                     </Link>
-                                    <button className="btn px-12 my-3 py-3 bg-rose-500 text-base font-bold text-white rounded-full hover:bg-rose-700">Details</button>
+                                    <Link to={`/carDetails/${car._id}`}>
+                                        <button className="btn px-8 my-3 py-2 bg-rose-700 text-sm font-bold text-white rounded-lg hover:bg-rose-600">Details</button>
+                                    </Link>
                                 </div>
-                                {/* <Link className="flex justify-center">
-                                        <button className="w-2/3 my-3 py-3 bg-rose-500 text-base font-bold text-white rounded-full hover:bg-rose-700">Add Cart</button>
-                                    </Link> */}
                             </div>
                         </div>
                     )
