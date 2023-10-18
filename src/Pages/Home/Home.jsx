@@ -4,6 +4,7 @@ import Brands from "../../Components/BrandsName/Brands";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import OurPackeges from "../../Components/OurPackege/OurPackeges";
+import AboutCars from "../../Components/AboutCars/AboutCars";
 
 const Home = () => {
     useEffect(()=>{
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner></Banner>
             <Brands></Brands>
             <OurPackeges></OurPackeges>
+            <AboutCars></AboutCars>
         </div>
     );
 };
