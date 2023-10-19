@@ -26,7 +26,7 @@ const ThemeChange = () => {
         />
 
         <svg
-          className="swap-on fill-current w-10 h-10"
+          className="swap-on fill-current w-10 h-10 text-yellow-400"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -34,7 +34,7 @@ const ThemeChange = () => {
         </svg>
 
         <svg
-          className="swap-off fill-current w-10 h-10"
+          className="swap-off fill-current w-10 h-10 text-gray-400"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >

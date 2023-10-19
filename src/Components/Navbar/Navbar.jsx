@@ -49,7 +49,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end mr-4">
-                <a className="px-3 py-1 md:px-6 md:py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600">LogIn</a>
+                <NavLink to='/login'>
+                    <button className="px-3 py-1 md:px-6 md:py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600 cursor-pointer">LogIn</button>
+                </NavLink>
             </div>
         </div>
     );
