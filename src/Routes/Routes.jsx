@@ -8,6 +8,7 @@ import UpdateCars from "../Components/UpdateCars/UpdateCars";
 import CarDetails from "../Components/CarDetails/CarDetails";
 import Login from "../Pages/Login-registetion/Login";
 import Register from "../Pages/Login-registetion/Registation";
+import PrivetRoutes from "./PrivetRoutes";
 
     const router = createBrowserRouter([
         {
@@ -26,16 +27,16 @@ import Register from "../Pages/Login-registetion/Registation";
                 },
                 {
                     path: '/updateCars/:id',
-                    element: <UpdateCars></UpdateCars>,
+                    element: <PrivetRoutes><UpdateCars></UpdateCars></PrivetRoutes>,
                     loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
                 },
                 {
                     path: '/addProduct',
-                    element: <AddProducts></AddProducts>
+                    element: <PrivetRoutes><AddProducts></AddProducts></PrivetRoutes>
                 },
                 {
                     path: '/carDetails/:id',
-                    element: <CarDetails></CarDetails>,
+                    element: <PrivetRoutes><CarDetails></CarDetails></PrivetRoutes>,
                     loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
                 },
                 {
