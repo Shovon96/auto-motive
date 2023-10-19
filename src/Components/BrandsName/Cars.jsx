@@ -18,6 +18,11 @@ const Cars = () => {
             <h1 className="text-5xl font-extrabold text-center my-4 text-rose-600">{brand_name}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8">
                 {
+                    cars?.length === 0 ? 
+                    <div>
+                        <h1 className="text-4xl text-center my-12">Cars not found</h1>
+                    </div> 
+                    :
                     cars.map(car =>
                         <div key={car._id} className="justify-self-center p-4">
                             <img className="h-72" src={car.ImageURL} alt="" />
@@ -43,6 +48,7 @@ const Cars = () => {
                             </div>
                         </div>
                     )
+
                 }
             </div>
         </div>

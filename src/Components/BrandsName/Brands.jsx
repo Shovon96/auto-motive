@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const Brands = () => {
     const lodedData = useLoaderData()
-    console.log(lodedData);
+    // console.log(lodedData);
     const [brands, setBrands] = useState(lodedData)
     return (
         <div>

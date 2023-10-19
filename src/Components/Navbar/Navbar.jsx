@@ -44,12 +44,12 @@ const Navbar = () => {
             Add Product
         </NavLink>
         <NavLink
-            to="/addCart"
+            to="/myCart"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "px-5 py-2 font-bold rounded-lg text-black lg:text-white bg-rose-700 shadow-md hover:bg-rose-600" : "px-5 py-2 font-bold rounded-lg text-rose-600 lg:text-white border-y"
             }
         >
-            Add Cart
+            My Cart
         </NavLink>
     </>
 

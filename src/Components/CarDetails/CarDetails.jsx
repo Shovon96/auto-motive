@@ -1,9 +1,43 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const CarDetails = () => {
 
     const lodedData = useLoaderData()
     const { ImageURL, brand_name, Name, price, rating, short_description, type } = lodedData
+
+    const { user } = useContext(AuthContext);
+    const cartData = {
+        email: user.email,
+        ImageURL,
+        brand_name,
+        Name, 
+        price
+    }
+
+    const handleAddCart = () => {
+        fetch('http://localhost:5000/carts',{
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cartData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.insertedId) {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Your Coffee has been saved successfully!',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+            }
+        })
+    }
 
     return (
         <div className="max-w-6xl mx-auto mb-16 mt-8">
@@ -21,7 +55,7 @@ const CarDetails = () => {
                 <h3 className="text-lg font-medium my-2">Price: ${price}</h3>
                 <p className="font-medium my-2">Rating: {rating}</p>
                 <p className="text-lg px-4 md:px-24">{short_description}</p>
-                <button className="btn bg-rose-700 px-8 py-2 text-white mt-3 hover:bg-rose-600">Add Cart</button>
+                <button onClick={handleAddCart} className="btn bg-rose-700 px-8 py-2 text-white mt-3 hover:bg-rose-600">Add Cart</button>
             </div>
         </div>
     );
