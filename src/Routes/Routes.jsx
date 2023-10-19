@@ -7,6 +7,7 @@ import Cars from "../Components/BrandsName/Cars";
 import UpdateCars from "../Components/UpdateCars/UpdateCars";
 import CarDetails from "../Components/CarDetails/CarDetails";
 import Login from "../Pages/Login-registetion/Login";
+import Register from "../Pages/Login-registetion/Registation";
 
     const router = createBrowserRouter([
         {
@@ -40,6 +41,10 @@ import Login from "../Pages/Login-registetion/Login";
                 {
                     path: '/login',
                     element: <Login></Login>
+                },
+                {
+                    path: '/registetion',
+                    element: <Register></Register>
                 }
             ]
 
