@@ -59,15 +59,16 @@ const MyCart = () => {
 
     return (
         <>
+        <h1 className="text-3xl md:text-5xl text-center font-bold mt-8 underline">My carts</h1>
             <div>
                 {
                     loading ? <Loader></Loader>
                         :
-                        <div className="overflow-x-auto max-w-6xl mx-auto my-12">
+                        <div className="overflow-x-auto md:max-w-6xl mx-auto my-12">
                             <table className="table">
                                 {/* head */}
                                 <thead className="shadow-md h-16">
-                                    <tr className="text-lg font-semibold">
+                                    <tr className="md:text-lg font-semibold">
                                         <th>CAR Images</th>
                                         <th>Name</th>
                                         <th>Price</th>
@@ -80,19 +81,19 @@ const MyCart = () => {
                                             <tr key={item?._id}>
                                                 <td>
                                                     <div className="flex items-center space-x-3">
-                                                        <img className="w-56 h-48" src={item?.ImageURL} alt="" />
+                                                        <img className="w-24 h-20 md:w-56 md:h-48" src={item?.ImageURL} alt="" />
                                                     </div>
                                                 </td>
-                                                <td className="text-xl font-semibold">{item?.Name}</td>
-                                                <td className="text-xl font-semibold">{item?.price}$</td>
-                                                <td><button onClick={() => handleDelete(item?._id)} className="btn btn-error text-white">Delete</button></td>
+                                                <td className="md:text-xl font-semibold">{item?.Name}</td>
+                                                <td className="md:text-xl font-semibold">{item?.price}$</td>
+                                                <td><button onClick={() => handleDelete(item?._id)} className="btn btn-sm md:btn-md btn-error text-white">Delete</button></td>
                                             </tr>
                                         )
                                     }
                                 </tbody>
                                 {/* foot */}
                                 <tfoot>
-                                    <tr className="text-2xl font-bold border-t-2">
+                                    <tr className="md:text-2xl font-bold border-t-2">
                                         <th></th>
                                         <th>Total = </th>
                                         <th>{total}$</th>

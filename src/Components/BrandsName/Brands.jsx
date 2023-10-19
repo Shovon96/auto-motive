@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Brands = () => {
     const lodedData = useLoaderData()
     // console.log(lodedData);
     const [brands, setBrands] = useState(lodedData)
+    const {loading} = useContext(AuthContext)
+
+    if(loading){
+        return <div className="flex justify-center items-center h-[80vh]"><span className="loading loading-lg loading-spinner text-error"></span></div>
+    }
     return (
         <div>
             <h1 className="text-3xl md:text-5xl text-center font-bold my-4">Br<span className="text-rose-600">an</span>ds</h1>
