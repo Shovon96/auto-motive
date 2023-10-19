@@ -1,6 +1,29 @@
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useContext } from "react";
+import { toast } from "react-toastify";
+import { FaRegUser } from "react-icons/fa";
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                toast.success("LogOut Success!", {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 2000,
+                });
+            })
+            .catch(error => {
+                toast.error(error.message, {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 2000,
+                });
+
+            })
+    }
 
     const navLink = <>
 
@@ -48,11 +71,68 @@ const Navbar = () => {
                     {navLink}
                 </ul>
             </div>
-            <div className="navbar-end mr-4">
-                <NavLink to='/login'>
-                    <button className="px-3 py-1 md:px-6 md:py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600 cursor-pointer">LogIn</button>
-                </NavLink>
+            <div className="navbar-end hidden lg:flex">
+                {
+                    user ? <div className="flex items-center font-bold">
+                        <p className="pl-3 text-white text-sm">{user?.displayName}</p>
+                        <img className="h-10 w-10 mx-2 rounded-full" src={user?.photoURL} alt="" />
+                        <button onClick={handleLogOut} className="px-3 py-1 md:px-6 md:py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600 cursor-pointer">SignOut</button>
+                    </div>
+                        :
+                        <button>
+                            <NavLink to='/login' className="px-3 py-1 md:px-6 md:py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600 cursor-pointer">SignIn</NavLink>
+                        </button>
+                }
+
             </div>
+            <div className="navbar-end  lg:hidden">
+                {
+                    user ? <>
+
+                        <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                                {
+                                    user?.photoURL ?
+                                        <img className="cursor-pointer h-10 w-10 mx-2 rounded-full" src={user?.photoURL} alt="" />
+
+                                        :
+                                        <FaRegUser></FaRegUser>
+                                }
+                            </label>
+                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3  z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                {
+                                    user && <li className="pl-3 pb-2 ">{user?.displayName}</li>
+                                }
+                                {
+                                    user && <>
+                                        <li className="pl-3 pb-2 ">{user?.email}</li>
+                                        <button onClick={handleLogOut} className="px-3 py-1 md:px-6 md:py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600 cursor-pointer">SignOut</button>
+                                    </>
+
+                                }
+                            </ul>
+                        </div>
+                    </>
+                        :
+                        <button>
+                            <NavLink to='/login' className="px-3 py-1 md:px-6 md:py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600 cursor-pointer">SignIn</NavLink>
+                        </button>
+                }
+
+            </div>
+            {/* <div className="navbar-end mr-4">
+                {
+                    user ? <>
+                        <span className="text-white mr-3">{user?.displayName}</span>
+                        <img className="h-10 w-10 mx-2 rounded-full" src={user?.photoURL} alt="" />
+                        <button onClick={handleLogOut} className="px-3 py-1 md:px-6 md:py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600 cursor-pointer">SignOut</button>
+                    </>
+                        :
+                        <button>
+                            <NavLink to='/login' className="px-3 py-1 md:px-6 md:py-2 font-bold rounded-lg text-white bg-rose-700 shadow-md hover:bg-rose-600 cursor-pointer">SignIn</NavLink>
+                        </button>
+                }
+            </div> */}
         </div>
     );
 };
