@@ -42,17 +42,17 @@ const Cars = () => {
                         :
                         cars.map(car =>
                             <div key={car._id} className="justify-self-center p-4">
-                                <img className="h-72" src={car.ImageURL} alt="" />
+                                <img className="h-72" src={car?.ImageURL} alt="" />
                                 <div className="shadow-md px-5">
                                     <div className="md:flex justify-between my-2 text-lg">
-                                        <h2><span className="font-bold">Name: </span>{car.Name}</h2>
-                                        <h3><span className="font-bold">Brand Name: </span>{car.brand_name}</h3>
+                                        <h2><span className="font-bold">Name: </span>{car?.Name}</h2>
+                                        <h3><span className="font-bold">Brand Name: </span>{car?.brand_name}</h3>
                                     </div>
                                     <div className="md:flex justify-between my-2 text-lg flex-wrap">
-                                        <h4><span className="font-bold">Type: </span>{car.type}</h4>
-                                        <p><span className="font-bold">Price: </span>$ {car.price}</p>
+                                        <h4><span className="font-bold">Type: </span>{car?.type}</h4>
+                                        <p><span className="font-bold">Price: </span>$ {car?.price}</p>
                                     </div>
-                                    <p>Ratting: {car.rating}</p>
+                                    <p>Ratting: {car?.rating}</p>
                                     {/* <p className="font-medium text-gray-500 py-3 h-24">{car.short_description}</p> */}
                                     <div className="flex justify-evenly">
                                         <Link to={`/updateCars/${car._id}`}>

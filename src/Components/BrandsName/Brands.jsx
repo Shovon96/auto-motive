@@ -24,8 +24,8 @@ const Brands = () => {
                                 data-aos-duration="2000"
                                 className="shadow-md rounded-lg p-3 cursor-pointer"
                             >
-                                <img className="h-52 w-56" src={logo.brand_img} alt="" />
-                                <h3 className="text-3xl font-extrabold text-center mt-4">{logo.brand_name}</h3>
+                                <img className="h-52 w-56" src={logo?.brand_img} alt="" />
+                                <h3 className="text-3xl font-extrabold text-center mt-4">{logo?.brand_name}</h3>
                                 {/* <button className="w-full btn text-white font-bold capitalize bg-rose-600 mt-2 hover:bg-rose-700">See Details</button> */}
                             </div>
                         </Link>
