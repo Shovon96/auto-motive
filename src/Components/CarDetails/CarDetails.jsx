@@ -18,7 +18,7 @@ const CarDetails = () => {
     }
 
     const handleAddCart = () => {
-        fetch('https://automotive-server-8c676odqe-coddings-projects.vercel.app/carts',{
+        fetch('https://automotive-server-zeta.vercel.app/carts',{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

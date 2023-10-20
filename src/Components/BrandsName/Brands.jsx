@@ -1,27 +1,34 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+// import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Loader from "../Loader/Loader";
 
 const Brands = () => {
     // const lodedData = useLoaderData()
     // console.log(lodedData);
     const [brands, setBrands] = useState([])
-    const {loading} = useContext(AuthContext)
+    const [loading, setLoading] = useState(true);
+
+    // const {loading} = useContext(AuthContext)
 
     useEffect(() => {
-        fetch('https://automotive-server-8c676odqe-coddings-projects.vercel.app/brands')
+        fetch('https://automotive-server-zeta.vercel.app/brands')
         .then(res => res.json())
-        .then(data => setBrands(data))
+        .then(data => {
+            setLoading(false)
+            setBrands(data)
+        })
     }, [])
 
-    if(loading){
-        return <div className="flex justify-center items-center h-[80vh]"><span className="loading loading-lg loading-spinner text-error"></span></div>
-    }
+    // if(loading){
+    //     return <div className="flex justify-center items-center h-[80vh]"><span className="loading loading-lg loading-spinner text-error"></span></div>
+    // }
     return (
         <div>
             <h1 className="text-3xl md:text-5xl text-center font-bold my-4">Br<span className="text-rose-600">an</span>ds</h1>
             <p className="px-4 lg:px-72 text-center text-gray-400">automotive excellence, cutting-edge design and precision engineering converge in a symphony of performance and style. From electric pioneers redefining the industry to legacy brands synonymous with reliability, each vehicle tells a story of innovation and craftsmanship.</p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto my-12">
+            {loading ? <Loader></Loader> :
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto my-12">
                 {
                     brands?.map(logo =>
                         <Link key={logo._id} className=" justify-self-center" to={`/cars/${logo.brand_name}`}>
@@ -38,6 +45,7 @@ const Brands = () => {
                     )
                 }
             </div>
+            }
         </div>
     );
 };

@@ -11,7 +11,7 @@ const MainLayout = () => {
             <div className="max-w-full mx-auto">
                 <Navbar></Navbar>
                 <Outlet></Outlet>
-                <div className="fixed top-0">
+                <div className="fixed top-3 ml-16 lg:ml-2 lg:top-6">
                     <ThemeChange></ThemeChange>
                 </div>
             </div>
