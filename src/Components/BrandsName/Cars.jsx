@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
+import Slider from "../Slider/Slider";
 
 const Cars = () => {
 
@@ -19,7 +20,8 @@ const Cars = () => {
     }, [brand_name])
 
     return (
-        <div className="mb-32 mt-8">
+        <div className="mb-32">
+            <Slider></Slider>
             <h1 className="text-5xl font-extrabold text-center my-4 text-rose-600">{brand_name}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8">
                 {
