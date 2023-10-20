@@ -1,12 +1,18 @@
-import { useContext, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Brands = () => {
-    const lodedData = useLoaderData()
+    // const lodedData = useLoaderData()
     // console.log(lodedData);
-    const [brands, setBrands] = useState(lodedData)
+    const [brands, setBrands] = useState([])
     const {loading} = useContext(AuthContext)
+
+    useEffect(() => {
+        fetch('https://automotive-server-8c676odqe-coddings-projects.vercel.app/brands')
+        .then(res => res.json())
+        .then(data => setBrands(data))
+    }, [])
 
     if(loading){
         return <div className="flex justify-center items-center h-[80vh]"><span className="loading loading-lg loading-spinner text-error"></span></div>
@@ -17,7 +23,7 @@ const Brands = () => {
             <p className="px-4 lg:px-72 text-center text-gray-400">automotive excellence, cutting-edge design and precision engineering converge in a symphony of performance and style. From electric pioneers redefining the industry to legacy brands synonymous with reliability, each vehicle tells a story of innovation and craftsmanship.</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto my-12">
                 {
-                    brands.map(logo =>
+                    brands?.map(logo =>
                         <Link key={logo._id} className=" justify-self-center" to={`/cars/${logo.brand_name}`}>
                             <div
                                 data-aos="zoom-in-down"

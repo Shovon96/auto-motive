@@ -20,7 +20,7 @@ import MyCart from "../Pages/MyCart/MyCart";
                 {
                     path: '/',
                     element: <Home></Home>,
-                    loader: () => fetch('https://automotive-server-8c676odqe-coddings-projects.vercel.app/brands')
+                    // loader: () => fetch('https://automotive-server-8c676odqe-coddings-projects.vercel.app/brands')
                 },
                 {
                     path: '/cars/:brand_name',
