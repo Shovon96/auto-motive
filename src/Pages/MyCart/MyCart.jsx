@@ -11,7 +11,7 @@ const MyCart = () => {
     const [total, setTotal] = useState(0)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/carts/${user?.email}`)
+        fetch(`https://automotive-server-8c676odqe-coddings-projects.vercel.app/carts/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setCart(data)
@@ -37,7 +37,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/carts/${_id}`, {
+                fetch(`https://automotive-server-8c676odqe-coddings-projects.vercel.app/carts/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

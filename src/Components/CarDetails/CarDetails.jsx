@@ -18,7 +18,7 @@ const CarDetails = () => {
     }
 
     const handleAddCart = () => {
-        fetch('http://localhost:5000/carts',{
+        fetch('https://automotive-server-8c676odqe-coddings-projects.vercel.app/carts',{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

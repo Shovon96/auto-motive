@@ -20,7 +20,7 @@ import MyCart from "../Pages/MyCart/MyCart";
                 {
                     path: '/',
                     element: <Home></Home>,
-                    loader: () => fetch('http://localhost:5000/brands')
+                    loader: () => fetch('https://automotive-server-8c676odqe-coddings-projects.vercel.app/brands')
                 },
                 {
                     path: '/cars/:brand_name',
@@ -29,7 +29,7 @@ import MyCart from "../Pages/MyCart/MyCart";
                 {
                     path: '/updateCars/:id',
                     element: <PrivetRoutes><UpdateCars></UpdateCars></PrivetRoutes>,
-                    loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
+                    loader: ({params}) => fetch(`https://automotive-server-8c676odqe-coddings-projects.vercel.app/car/${params.id}`)
                 },
                 {
                     path: '/addProduct',
@@ -38,7 +38,7 @@ import MyCart from "../Pages/MyCart/MyCart";
                 {
                     path: '/carDetails/:id',
                     element: <PrivetRoutes><CarDetails></CarDetails></PrivetRoutes>,
-                    loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
+                    loader: ({params}) => fetch(`https://automotive-server-8c676odqe-coddings-projects.vercel.app/car/${params.id}`)
                 },
                 {
                     path: '/myCart',

@@ -11,7 +11,7 @@ const Cars = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/${brand_name}`)
+        fetch(`https://automotive-server-8c676odqe-coddings-projects.vercel.app/cars/${brand_name}`)
             .then(res => res.json())
             .then(data => {
                 setLoading(false)
