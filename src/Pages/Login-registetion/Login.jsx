@@ -67,6 +67,7 @@ const Login = () => {
 
     return (
         <div  className="hero h-auto" style={{backgroundImage: 'url(https://i.ibb.co/J7cJxxx/download-1.jpg)'}}>
+            <div className="hero-overlay bg-opacity-60"></div>
             <div className="h-auto my-16 flex items-center justify-center" style={{backdropFilter: 'blur(5px)'}}>
                 <div className="border bg-opacity-10 p-8 rounded-lg shadow-2xl w-96">
                     <h2 className="text-5xl text-center text-gray-400 font-extrabold mb-6">Sign In</h2>
@@ -100,7 +101,7 @@ const Login = () => {
                             </div>
                         </div>
 
-                        <p className="mb-4 text-white hover:text-blue-500 hover:underline"><a href="">Forget Your Password?</a></p>
+                        <p className="mb-4 text-blue-600 hover:text-blue-500 hover:underline"><a href="">Forget Your Password?</a></p>
 
                         {/* Sign In Button */}
                         <button type="submit" className="w-full bg-gray-500 text-white text-lg font-semibold p-2 rounded-md hover:bg-gray-600 focus:outline-none focus:shadow-outline-blue">

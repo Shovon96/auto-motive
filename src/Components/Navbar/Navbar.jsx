@@ -3,6 +3,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 import { FaRegUser } from "react-icons/fa";
+import ThemeChange from "../ThemeChange/ThemeChange";
 
 const Navbar = () => {
 
@@ -64,6 +65,10 @@ const Navbar = () => {
                         {navLink}
                     </ul>
                 </div>
+
+                {/* import dark light mode theme component */}
+                <ThemeChange></ThemeChange>
+                
                 <img className="h-20 w-48 hidden md:block" src='https://i.ibb.co/m8JG2Wv/download.png' alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">

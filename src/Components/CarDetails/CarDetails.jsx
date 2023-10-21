@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import Rating from "react-rating";
 
 const CarDetails = () => {
 
@@ -13,30 +14,30 @@ const CarDetails = () => {
         email: user.email,
         ImageURL,
         brand_name,
-        Name, 
+        Name,
         price
     }
 
     const handleAddCart = () => {
-        fetch('https://automotive-server-zeta.vercel.app/carts',{
+        fetch('https://automotive-server-zeta.vercel.app/carts', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(cartData)
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.insertedId) {
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'success',
-                    title: 'Your Coffee has been saved successfully!',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Your Coffee has been saved successfully!',
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                }
+            })
     }
 
     return (
@@ -53,8 +54,14 @@ const CarDetails = () => {
                 <h2 className="text-2xl my-2 font-medium"><span className="font-bold">Brand Name:</span> {brand_name}</h2>
                 <h3 className="text-lg font-medium my-2">Type: {type}</h3>
                 <h3 className="text-lg font-medium my-2">Price: ${price}</h3>
-                <p className="font-medium my-2">Rating: {rating}</p>
-                <p className="text-lg px-4 md:px-24">{short_description}</p>
+                <Rating
+                    initialRating={rating}
+                    emptySymbol={<span className="text-gray-300 text-4xl">☆</span>}
+                    fullSymbol={<span className="text-yellow-500 text-4xl">★</span>}
+                    readonly
+                />
+                {/* <p className="font-medium my-2">Rating: {rating}</p> */}
+                <p className="text-lg px-4 md:px-24 mt-2">{short_description}</p>
                 <button onClick={handleAddCart} className="btn bg-rose-700 px-8 py-2 text-white mt-3 hover:bg-rose-600">Add Cart</button>
             </div>
         </div>

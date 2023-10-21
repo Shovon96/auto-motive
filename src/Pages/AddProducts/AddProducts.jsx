@@ -9,13 +9,13 @@ const AddProducts = () => {
         event.preventDefault()
         const form = event.target;
         const Name = form.name.value;
-        const brand_name= form.brandName.value;
+        const brand_name = form.brandName.value;
         const type = form.type.value;
         const price = form.price.value;
         const rating = form.ratting.value;
         const short_description = form.details.value;
         const ImageURL = form.photo.value;
-        const newCar = {ImageURL,brand_name, Name,  type, price, rating, short_description}
+        const newCar = { ImageURL, brand_name, Name, type, price, rating, short_description }
         // console.log(newCar);
 
         // send data to the server
@@ -53,40 +53,50 @@ const AddProducts = () => {
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Name:</span>
                             </label>
-                            <input type="text" name="name" placeholder="Name" className="input input-bordered border-zinc-600 w-full" required/>
+                            <input type="text" name="name" placeholder="Name" className="input input-bordered border-zinc-600 w-full" required />
 
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Brand Name:</span>
                             </label>
-                            <input type="text" name="brandName" placeholder="Brand Name" className="input input-bordered border-zinc-600 w-full"  required/>
+                            <div className="form-control">
+                                <select className="select input input-bordered border-zinc-600 w-full">
+                                    <option disabled selected>Slect a brand</option>
+                                    <option>TOYOTA</option>
+                                    <option>FORD</option>
+                                    <option>BMW</option>
+                                    <option>Mercedes-Benz</option>
+                                    <option>TESLA</option>
+                                    <option>HONDA</option>
+                                </select>
+                            </div>
 
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Type:</span>
                             </label>
-                            <input type="text" name="type" placeholder="Type Name" className="input input-bordered border-zinc-600 w-full"  required/>
+                            <input type="text" name="type" placeholder="Type Name" className="input input-bordered border-zinc-600 w-full" required />
                         </div>
                         <div className="w-full">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Price:</span>
                             </label>
-                            <input type="text" name="price" placeholder="Price" className="input input-bordered border-zinc-600 w-full"  required/>
+                            <input type="text" name="price" placeholder="Price" className="input input-bordered border-zinc-600 w-full" required />
 
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Ratting:</span>
+                                <span className="label-text text-lg font-semibold">Rating:</span>
                             </label>
-                            <input type="text" name="ratting" placeholder="Type your ratting" className="input input-bordered border-zinc-600 w-full"  required />
+                            <input type="text" name="ratting" placeholder="Type your ratting" className="input input-bordered border-zinc-600 w-full" required />
 
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Details:</span>
+                                <span className="label-text text-lg font-semibold">Description:</span>
                             </label>
-                            <input type="text" name="details" placeholder="Write Details" className="input input-bordered border-zinc-600 w-full"  required/>
+                            <input type="text" name="details" placeholder="Write Description" className="input input-bordered border-zinc-600 w-full" required />
                         </div>
                     </div>
 
                     <label className="label">
                         <span className="label-text text-lg font-semibold">Photo URL:</span>
                     </label>
-                    <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered border-zinc-600"  required/>
+                    <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered border-zinc-600" required />
                 </div>
                 <button className="btn btn-block mt-4 bg-rose-600 text-white hover:bg-rose-700">Add Car</button>
             </form>

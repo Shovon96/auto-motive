@@ -22,13 +22,16 @@ const Slider = () => {
                     }}
                 >
                     <SwiperSlide>
-                        <img className="w-full h-[90vh]" src="https://i.ibb.co/5GnMFf2/M-DEX-Flotte-Stage-Presentation-1680x756px.jpg" alt="" />
+                        <img className="w-full h-[50vh] md:h-[90vh]" src="https://i.ibb.co/yqDwFvX/a08f210cc1dd3d315e7744c415107f54.jpg" alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className="w-full h-[90vh]" src="https://i.ibb.co/NWXd562/aff4d6b4df03bfc5b47e50f6e8105127.png" alt="" />
+                        <img className="w-full h-[50vh] md:h-[90vh]" src="https://i.ibb.co/NWXd562/aff4d6b4df03bfc5b47e50f6e8105127.png" alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className="w-full h-[90vh]" src="https://media.discordapp.net/attachments/1163919577130999870/1164726373718442025/f3712c26bca08ab2f4fe36ca9d0e8af4.png?ex=654442f7&is=6531cdf7&hm=2bc98306d0ef26b255b2bfd24c9828f8d162792810236616075dda72ea723ea9&=" alt="" />
+                        <img className="w-full h-[50vh] md:h-[90vh]" src="https://i.ibb.co/wrjzW4W/11x5.webp" alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img className="w-full h-[50vh] md:h-[90vh]" src="https://i.ibb.co/z2dmPpm/ys-finest-luxury-banner.jpg" alt="" />
                     </SwiperSlide>
                 </Swiper>
             </div>

@@ -56,7 +56,8 @@ const Register = () => {
 
     return (
         <div  className="hero h-auto" style={{backgroundImage: 'url(https://i.ibb.co/J7cJxxx/download-1.jpg)'}}>
-            <div className="h-auto my-12 flex items-center justify-center">
+             <div className="hero-overlay bg-opacity-60"></div>
+            <div className="h-auto my-12 flex items-center justify-center"  style={{backdropFilter: 'blur(5px)'}}>
                 <div className="border p-8 rounded-lg shadow-xl w-96">
                     <h2 className="text-5xl text-center text-gray-500 font-extrabold mb-6">Sign Up</h2>
 
@@ -69,7 +70,7 @@ const Register = () => {
                                 type="text" id="name"
                                 name="name"
                                 placeholder="Type Your Name" required
-                                className="w-full px-3 py-2 border rounded-md bg-transparent border-b border-gray-500 focus:outline-none focus:border-rose-700" />
+                                className="w-full px-3 py-2 placeholder-gray-300 border rounded-md bg-transparent border-b border-gray-500 focus:outline-none focus:border-rose-700" />
                         </div>
                         {/* PhotoURL Input */}
                         <div className="mb-4">
@@ -78,7 +79,7 @@ const Register = () => {
                                 type="text" id="photo"
                                 name="photo"
                                 placeholder="Type Your PhotoURL" required
-                                className="w-full px-3 py-2 border rounded-md bg-transparent border-b border-gray-500 focus:outline-none focus:border-rose-700" />
+                                className="w-full px-3 py-2 placeholder-gray-300 border rounded-md bg-transparent border-b border-gray-500 focus:outline-none focus:border-rose-700" />
                         </div>
                         {/* Email Input */}
                         <div className="mb-4">
@@ -87,7 +88,7 @@ const Register = () => {
                                 type="email" id="email"
                                 name="email"
                                 placeholder="Type Your Email" required
-                                className="w-full px-3 py-2 border rounded-md bg-transparent border-b border-gray-500 focus:outline-none focus:border-rose-700" />
+                                className="w-full px-3 py-2 border placeholder-gray-300 rounded-md bg-transparent border-b border-gray-500 focus:outline-none focus:border-rose-700" />
                         </div>
 
                         {/* Password Input */}
@@ -98,7 +99,7 @@ const Register = () => {
                                     type={showPassword ? 'text' : 'password'}
                                     id="password" placeholder="Type Your Password" required
                                     name="password" 
-                                    className="relative w-full text-white px-3 py-2 border rounded-md bg-transparent border-b border-gray-500 focus:outline-none focus:border-blue-500 p-2" />
+                                    className="relative w-full text-white placeholder-gray-300 px-3 py-2 border rounded-md bg-transparent border-b border-gray-500 focus:outline-none focus:border-rose-700" />
                                 <span className=" absolute ml-72" onClick={() => setShowPassword(!showPassword)}>
                                     {
                                         showPassword ? <FaEye className="text-white" title="Hide"></FaEye> : <FaEyeSlash className="text-white" title="Show"></FaEyeSlash>

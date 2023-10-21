@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import Slider from "../Slider/Slider";
+import Rating from "react-rating";
 
 const Cars = () => {
 
@@ -52,7 +53,13 @@ const Cars = () => {
                                         <h4><span className="font-bold">Type: </span>{car?.type}</h4>
                                         <p><span className="font-bold">Price: </span>$ {car?.price}</p>
                                     </div>
-                                    <p>Ratting: {car?.rating}</p>
+                                    <Rating
+                                        initialRating={car?.rating}
+                                        emptySymbol={<span className="text-gray-300 text-4xl">☆</span>}
+                                        fullSymbol={<span className="text-yellow-500 text-4xl">★</span>}
+                                        readonly
+                                    />
+                                    {/* <p>Ratting: {car?.rating}</p> */}
                                     {/* <p className="font-medium text-gray-500 py-3 h-24">{car.short_description}</p> */}
                                     <div className="flex justify-evenly">
                                         <Link to={`/updateCars/${car._id}`}>

@@ -74,12 +74,12 @@ const UpdateCars = () => {
                             <input type="text" name="price" placeholder="Price" defaultValue={price} className="input input-bordered border-zinc-600 w-full" required />
 
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Ratting:</span>
+                                <span className="label-text text-lg font-semibold">Rating:</span>
                             </label>
                             <input type="text" name="ratting" placeholder="Type your ratting" defaultValue={rating} className="input input-bordered border-zinc-600 w-full" required />
                             
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Descriptions:</span>
+                                <span className="label-text text-lg font-semibold">Description:</span>
                             </label>
                             <input type="text" name="details" placeholder="Write Description" defaultValue={short_description} className="input input-bordered border-zinc-600 w-full" required />
                         </div>
