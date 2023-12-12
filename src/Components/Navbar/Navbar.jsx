@@ -69,7 +69,7 @@ const Navbar = () => {
                 {/* import dark light mode theme component */}
                 <ThemeChange></ThemeChange>
                 
-                <img className="h-20 w-48 hidden md:block" src='https://i.ibb.co/m8JG2Wv/download.png' alt="" />
+                <img className="h-20 w-48 hidden md:block" src='https://media.discordapp.net/attachments/1177886803424976896/1184018979375820902/360_F_502880411_Sq4ueCVz1PHiBwFDxhQcnBB4IWgVaylK.png?ex=658a729a&is=6577fd9a&hm=5208254437b069ba781f6ccc59f7e21105436a91f3fa42ea5a5b3a6516a3eb98&=&format=webp&quality=lossless' alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-4">

@@ -3,7 +3,7 @@ const Banner = () => {
     return (
         <div>
             <div className="relative">
-                <img className="w-full lg:h-[80vh]" src="https://i.ibb.co/hsVFHvL/360-F-460444211-E7j3nj-YE705-Rk1gu-Kz9-LKh58g-Fgi-Tyb-V.jpg" alt="" />
+                <img className="w-full lg:h-[80vh]" src="https://media.discordapp.net/attachments/1177886803424976896/1184017418738212925/360_F_460444211_E7j3njYE705Rk1guKz9LKh58gFgiTybV.jpg?ex=658a7126&is=6577fc26&hm=8fc5824020620fb48603a80a432d990d47ecab0828e926713d0a75510e83f6e5&=&format=webp&width=1025&height=342" alt="" />
             </div>
             <div 
             data-aos="fade-down"

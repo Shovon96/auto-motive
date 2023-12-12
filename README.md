@@ -1,5 +1,5 @@
 
-### Live Link: https://auto-motive-9df7d.web.app/
+### Live Link: https://slow-wind.surge.sh/
 
 ## Project Name: AutoMotive
 
